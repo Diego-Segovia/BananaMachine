@@ -32,9 +32,27 @@
                         <h5 class="card-title mb-0">Patient Potassium Entry</h5>
                     </div>
                     <div class="card-body">
+                        <div class="mb-3 fw-bold">Past 3 Tx Baths</div>
+                        <div class="mb-3">
+                            <label for="dataInput" class="form-label">1st K+ Level</label>
+                            <input type="number" step="0.1" class="form-control" id="1stK+Level"
+                                placeholder="Enter value (e.g., 4.5)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="dataInput" class="form-label">2nd K+ Level</label>
+                            <input type="number" step="0.1" class="form-control" id="2ndK+Level"
+                                placeholder="Enter value (e.g., 4.5)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="dataInput" class="form-label">3rd K+ Level</label>
+                            <input type="number" step="0.1" class="form-control" id="3rdK+Level"
+                                placeholder="Enter value (e.g., 4.5)">
+                        </div>
+                        <hr class="border-secondary">
+                        <div class="mb-3 fw-bold">Current Patient Potassium</div>
                         <div class="mb-3">
                             <label for="dataInput" class="form-label">K+ Level</label>
-                            <input type="number" step="0.1" class="form-control" id="dataInput"
+                            <input type="number" step="0.1" class="form-control" id="currentK+Level"
                                 placeholder="Enter value (e.g., 4.5)">
                         </div>
                         <button type="button" id="actionBtn" class="btn btn-primary w-100">Process Algorithm</button>
@@ -44,6 +62,9 @@
                     </div>
                     <div class="card-footer text-center text-body-secondary d-none" id="feedbackArea">
                         Patient to dialyze on: <span class="fw-bold text-primary" id="bathAmountId">2.0 K+</span> bath.
+                    </div>
+                    <div class="card-footer text-center text-body-secondary d-none" id="dialysisFrequencyResult">
+                        Patient can be removed from weekly po.
                     </div>
                 </div>
             </div>
