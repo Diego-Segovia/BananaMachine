@@ -1,29 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Grab DOM elements
   const actionBtn = document.getElementById("actionBtn");
   const dataInput = document.getElementById("dataInput");
   const feedbackArea = document.getElementById("feedbackArea");
+  const feedbackAreaPlaceholder = document.getElementById(
+    "feedbackAreaPlaceholder",
+  );
+  const bathAmount = document.getElementById("bathAmountId");
 
-  // Attach click event listener to the button
   actionBtn.addEventListener("click", () => {
     const inputValue = dataInput.value;
 
-    // Basic validation check
     if (!inputValue) {
-      feedbackArea.textContent = "Please enter a valid number.";
-      feedbackArea.classList.add("text-danger");
-      feedbackArea.classList.remove("text-body-secondary");
+      feedbackAreaPlaceholder.textContent = "Please enter a valid number.";
+      feedbackAreaPlaceholder.classList.add("text-danger");
+      feedbackAreaPlaceholder.classList.remove("text-body-secondary");
       return;
     }
 
-    // Reset styling on success and display the value
-    feedbackArea.classList.remove("text-danger");
-    feedbackArea.classList.add("text-body-secondary");
-    feedbackArea.textContent = `Successfully captured: ${inputValue}`;
+    feedbackAreaPlaceholder.classList.remove("text-danger");
+    feedbackAreaPlaceholder.classList.add("text-body-secondary");
 
-    // Log to console for debugging
-    console.log(`Algorithm triggered with value: ${inputValue}`);
+    feedbackAreaPlaceholder.classList.add("d-none");
+    feedbackArea.classList.remove("d-none");
 
-    // TODO: Wire up your algorithm logic here
+    if (inputValue >= 6) {
+      bathAmount.textContent = "1.0 K+";
+      return;
+    }
+
+    if (inputValue < 6 && inputValue > 4) {
+      bathAmount.textContent = "2.0 K+";
+      return;
+    }
+
+    if (inputValue <= 4) {
+      bathAmount.textContent = "3.0 K+";
+      return;
+    }
   });
 });
